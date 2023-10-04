@@ -1,24 +1,47 @@
-# README
+# DockerでRails環境を構築するためのテストアプリケーション
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+これは、チーム開発を行うにあたり、開発環境をDockerを用いて共有できるかテストするためのアプリケーションです。
 
-Things you may want to cover:
+## 使い方
 
-* Ruby version
+このアプリケーションを動かす場合は、まずはリポジトリを手元にクローンしてください。
+その後、Dockerを使った環境構築を行います。
 
-* System dependencies
+Dockerを使った環境準備(イメージのビルド)
+```
+$ docker compose build
+```
 
-* Configuration
+railsサーバーの起動(バックグラウンドでのコンテナの立ち上げとrailsサーバーの起動)
+```
+docker compose up -d
+```
 
-* Database creation
+コンテナ内に入る(rails・bundlerのコマンドはコンテナ内で実行します)
+```
+docker compose exec web bash
+```
 
-* Database initialization
+### 以下はコンテナ内で実行する
 
-* How to run the test suite
+データベースの作成(コンテナ内で実行してください)
+```
+rails db:create
+```
 
-* Services (job queues, cache servers, search engines, etc.)
+テーブルの作成
+```
+$ rails db:migrate
+```
 
-* Deployment instructions
+テストデータの作成
+```
+$ rails db:seed
+```
 
-* ...
+### 以下のURLにアクセスしてください
+
+[アプリケーションが正しく表示されるか確認する](http://localhost:3000/)
+
+### 以下の画面が表示されていれば成功！(ユーザー名は人によって違うかも？)
+
