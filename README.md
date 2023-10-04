@@ -45,3 +45,4 @@ $ rails db:seed
 
 ### 以下の画面が表示されていれば成功！(ユーザー名は人によって違うかも？)
 
+<img width="1430" alt="スクリーンショット 2023-10-04 15 47 18" src="https://github.com/nao52/rails_docker/assets/76091895/b243284b-2179-4af1-ba35-bbfad9812e94">
