@@ -14,19 +14,19 @@ $ docker compose build
 
 railsサーバーの起動(バックグラウンドでのコンテナの立ち上げとrailsサーバーの起動)
 ```
-docker compose up -d
+$ docker compose up -d
 ```
 
 コンテナ内に入る(rails・bundlerのコマンドはコンテナ内で実行します)
 ```
-docker compose exec web bash
+$ docker compose exec web bash
 ```
 
 ### 以下はコンテナ内で実行する
 
 データベースの作成(コンテナ内で実行してください)
 ```
-rails db:create
+$ rails db:create
 ```
 
 テーブルの作成
